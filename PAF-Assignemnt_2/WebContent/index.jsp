@@ -26,7 +26,7 @@
 					
 					<br>
 					 Hospital Contact/Hotline:  
-					 <input id="contactl" name="contact" type="text" class="form-control form-control-sm">  
+					 <input id="contact" name="contact" type="text" class="form-control form-control-sm">  
 					 
 					 <br> 
 					 Hospital Email:  

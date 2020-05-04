@@ -17,7 +17,7 @@ import com.hos.util.DBConnection;
 public class HospitalController {
 
 	private static Connection connection;
-	private static PreparedStatement ps;
+//	private static PreparedStatement ps;
 
 	
 	

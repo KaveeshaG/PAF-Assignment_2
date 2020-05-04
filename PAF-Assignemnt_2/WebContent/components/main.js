@@ -44,9 +44,9 @@ function validateItemForm() {
 		
 	} 
 	
-	 // ADDRESS  
+	 // MOBILE  
 	if ($("#address").val().trim() == "")  {   
-		return "Insert Mobile.";  
+		return "Insert Address.";  
 		
 	} 
 	 
@@ -62,7 +62,7 @@ function validateItemForm() {
 		return "Insert Email.";  
 		
 	} 
-	 
+		 
 	 return true; 
 	 
 }
@@ -80,12 +80,11 @@ $(document).on("click", ".btnRemove", function(event) {
 //UPDATE========================================== 
 $(document).on("click", ".btnUpdate", function(event) {     
 	
-	$("#hidappIDSave").val($(this).closest("tr").find('#hidappIDUpdate').val());     
+	$("#hidappIDSave").val($(this).closest("tr").find('#hidappIDUpdate').val()); 
 	$("#name").val($(this).closest("tr").find('td:eq(0)').text());    
 	$("#address").val($(this).closest("tr").find('td:eq(1)').text());     
 	$("#contact").val($(this).closest("tr").find('td:eq(2)').text());     
 	$("#email").val($(this).closest("tr").find('td:eq(3)').text());
-	
 	$("#alertSuccess").text("Updated successfully.");  
 	$("#alertSuccess").show(); 
 	

@@ -23,6 +23,7 @@ public class HospitalAPI extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	Hospital hos = new Hospital();
+	HospitalController hosc = new HospitalController(); 
 //	PaymentSchemeBean psBean = new PaymentSchemeBean();
 
 	@Override
@@ -34,7 +35,7 @@ public class HospitalAPI extends HttpServlet {
 		hos.setContactnumber(req.getParameter("contactnumber"));
 		
 //		String output = hos.insertHospital(hos);
-		String output = hos.insertHospital(hos);
+		String output = hosc.insertHospital(hos);
 		
 		resp.getWriter().write(output); 
 		
