@@ -1,4 +1,4 @@
-<%@page import="com.Appointment"%>
+<%@page import="com.hos.controller.HospitalController"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -16,7 +16,7 @@
 			<div class="col-8">       
 				<h1 class="m-3">Hospital Management</h1>        
 				
-				<form id="formHospital" name="formHospital" method="post" action="hospital.jsp">  
+				<form id="formHospital" name="formHospital" method="post" action="index.jsp">  
 					Hospital Name:  
 					<input id="name" name="name" type="text" class="form-control form-control-sm">  
 					
@@ -44,8 +44,8 @@
 				<br>  
 				<div id="divItemsGrid">   
 					<%    
-						Appointment appObj = new Appointment();
-						out.print(appObj.readAppointment());   
+						HospitalController appObj = new HospitalController();
+						out.print(appObj.viewAllHospitals());   
 					%>  					
 				</div> 				  
  			</div>		 

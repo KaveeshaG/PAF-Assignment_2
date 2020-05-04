@@ -24,7 +24,7 @@ import com.hos.model.Hospital;
 /**
  * 
  * @author KaveeshaG
- * all the services regarding to PaymentSchemes are implemented here
+ * all the services regarding to Hospitals are implemented here
  */
 
 @Path("/Hospital")
@@ -53,7 +53,7 @@ public class HospitalService {
 	@Path("/insert")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
-	public String insertPaymentScheme(String psData) {
+	public String insertHospital(String psData) {
 		
 		// Convert the input string to a JSON object
 				JsonObject jsonObj = new JsonParser().parse(psData).getAsJsonObject();
@@ -63,7 +63,7 @@ public class HospitalService {
 				hos.setContactnumber(jsonObj.get("contactnumber").getAsString());
 				hos.setEmail(jsonObj.get("email").getAsString());
 				
-				String output = hos.insertHospital(hosc);
+				String output = hos.insertHospital(hos);
 				
 				return output;		
 	}

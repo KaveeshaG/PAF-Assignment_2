@@ -1,5 +1,9 @@
 package com.hos.model;
-
+/**
+ * 
+ * @author KaveeshaG
+ * all the services regarding to Hospitals are implemented here
+ */
 public class Hospital {
 	private int hid;
 	private String hospitalname;

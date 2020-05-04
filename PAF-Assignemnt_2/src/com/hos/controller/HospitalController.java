@@ -8,46 +8,18 @@ import java.sql.Statement;
 import com.hos.model.Hospital;
 import com.hos.util.DBConnection;
 
-
+/**
+ * 
+ * @author KaveeshaG
+ * all the services regarding to Hospitals are implemented here
+ */
 
 public class HospitalController {
 
 	private static Connection connection;
 	private static PreparedStatement ps;
+
 	
-//	DBConnection dbCon = new DBConnection();
-
-	public String Addhospital(Hospital hospital) {
-		String output = "";
-		try {
-			connection = DBConnection.getConnection();
-			 if (connection == null)
-			 {return "Error while connecting to the database for inserting."; } 
-			
-			ps = connection.prepareStatement(
-					"INSERT INTO  hospital(hid,hospitalname,hospitaladdress,contactnumber,email) "
-							+ "	VALUES (?,?,?,?,?)");
-
-			ps.setInt(1, 0);
-			ps.setString(2, hospital.getHospitalname());
-			ps.setString(3, hospital.getHospitaladdress());
-			ps.setString(4, hospital.getContactnumber());
-			ps.setString(5, hospital.getEmail());
-			
-			ps.execute();
-			 connection.close();
-			 output = "Inserted successfully"; 
-
-		}
-		 catch (Exception e)
-		 {
-		 output = "Error while inserting the item.";
-		 System.err.println(e.getMessage());
-		 }
-		 return output; 
-
-		
-	}
 	
 	//--------------------------------view all the hospital details-------------------------------
 	public String viewAllHospitals() {
@@ -113,8 +85,9 @@ public class HospitalController {
 		
 	}
 	
+	
 	//-------------------------------------insert a hospital--------------------------------
-	public String insertPaymentScheme(Hospital hos) {
+	public String insertHospital(Hospital hos) {
 		
 		String output = "";
 		
@@ -155,6 +128,7 @@ public class HospitalController {
 		
 	}
 	
+	
 	//------------------------------delete a hospital----------------------------------
 	public String deleteHospital(Hospital hos){
 	
@@ -187,6 +161,7 @@ public class HospitalController {
 		
 		return output;
 	}
+	
 	
 	//------------------------------------ update the hospital data-------------------------------------------------------
 	public String updateHospital(Hospital hos) {

@@ -10,7 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.hos.model.Hospital;
 import com.hos.controller.*;;
-
+/**
+ * 
+ * @author KaveeshaG
+ * all the services regarding to Hospitals are implemented here
+ */
 @WebServlet("/HospitalAPI")
 public class HospitalAPI extends HttpServlet {
 	/**
@@ -29,6 +33,7 @@ public class HospitalAPI extends HttpServlet {
 		hos.setHospitaladdress(req.getParameter("hospitaladdress"));
 		hos.setContactnumber(req.getParameter("contactnumber"));
 		
+//		String output = hos.insertHospital(hos);
 		String output = hos.insertHospital(hos);
 		
 		resp.getWriter().write(output); 
