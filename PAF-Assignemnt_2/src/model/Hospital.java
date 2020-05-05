@@ -53,7 +53,7 @@ public class Hospital {
 				  // iterate through the rows in the result set   
 				  while (rs.next())   {  
 
-					  	String hid = Integer.toString(rs.getInt("hid"));
+					  	int hid = rs.getInt("hid");
 						String hospitalname = rs.getString("hospitalname");
 						String hospitaladdress = rs.getString("hospitaladdress");
 						String contactnumber = Integer.toString(rs.getInt("contactnumber"));
@@ -97,7 +97,8 @@ public class Hospital {
 				}
 
 				// create a prepared statement   
-				String query = " insert into hospital (`hid`,`hospitalname`,`hospitaladdress`,`contactnumber`,`email`)"+" values (?, ?, ?, ?, ?)";
+				String query = " INSERT INTO hospital (`hid`,`hospitalname`,`hospitaladdress`,`contactnumber`,`email`)"+" VALUES (?, ?, ?, ?, ?)";
+				
 
 				PreparedStatement preparedStmt = con.prepareStatement(query);
 
@@ -126,7 +127,7 @@ public class Hospital {
 		}
 		
 		//Update appointment
-		public String updateHospital(String hospitalname, String hospitaladdress, String contactnumber, String email)  {   
+		public String updateHospital(String hid, String hospitalname, String hospitaladdress, String contactnumber, String email)  {   
 			String output = ""; 
 		 
 		  try   {   
@@ -141,11 +142,13 @@ public class Hospital {
 				 
 		   PreparedStatement preparedStmt = con.prepareStatement(query); 
 		 
-		   // binding values    
-		   preparedStmt.setString(1, hospitalname);
+		   // binding values 
+		   
+		    preparedStmt.setString(1, hospitalname);
 			preparedStmt.setString(2,hospitaladdress);
 			preparedStmt.setString(3, contactnumber);
 			preparedStmt.setString(4,email);
+			preparedStmt.setInt(5, Integer.parseInt(hid));
 		   
 		 
 		   // execute the statement    

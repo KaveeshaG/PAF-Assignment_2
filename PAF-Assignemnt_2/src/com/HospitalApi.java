@@ -45,8 +45,8 @@ public class HospitalApi extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String result = appObj.insertHospital
-				(request.getParameter("name"), 
-				request.getParameter("address"), 
+				(request.getParameter("hospitalname"), 
+				request.getParameter("hospitaladdress"), 
 				request.getParameter("contactnumber"), 
 				request.getParameter("email"));
 		
@@ -84,27 +84,14 @@ public class HospitalApi extends HttpServlet {
 		Map<String, String> param = getParasMap(request);
 		
 		String result = appObj.updateHospital
-				(param.get("hospitalname").toString().toString().replace("+", " "),     
+				(param.get("hidAppIDSave").toString().toString(),
+				param.get("hospitalname").toString().toString().replace("+", " "),     
 				param.get("hospitaladdress").toString().toString().replace("+", " "),        
 				param.get("contactnumber").toString(),         
 		 		param.get("email").toString().toString().replace("%40", "@"));
 		
 		response.getWriter().write(result);
-	}
-
-	
-//	param.get("name").toString().toString().replace("+", " "),     
-//		param.get("mobile").toString(),        
-//		param.get("email").toString().toString().replace("%40", "@"),        
-//		param.get("nic").toString(),
-//		param.get("address").toString().toString().replace("+", " "), 
-//		param.get("date").toString().toString().replace("+", " "), 
-//		param.get("hospital").toString().toString().replace("+", " "), 
-//		param.get("doctor").toString().toString().replace("+", " "), 
-//		param.get("msg").toString().toString().replace("+", " ") );
-//		
-//		
-		
+	}	
 		
 	/**
 	 * @see HttpServlet#doDelete(HttpServletRequest, HttpServletResponse)
