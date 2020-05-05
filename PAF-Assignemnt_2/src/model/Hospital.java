@@ -78,14 +78,14 @@ public class Hospital {
 				  output += "</table>"; 
 				}
 				catch (Exception e) {  
-					output = "Error while reading the Appointment.";  
+					output = "Error while reading the Hospital Details.";  
 					System.err.println(e.getMessage()); 
 				}
 
 				return output;
 			}
 		
-		//Insert appointment
+		//Insert Hospital
 		public String insertHospital(String hospitalname, String hospitaladdress, String contactnumber, String email) {
 			String output = "";
 
@@ -126,7 +126,7 @@ public class Hospital {
 			 return output; 
 		}
 		
-		//Update appointment
+		//Update Hospital Details
 		public String updateHospital(String hid, String hospitalname, String hospitaladdress, String contactnumber, String email)  {   
 			String output = ""; 
 		 
