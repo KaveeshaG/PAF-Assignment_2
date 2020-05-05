@@ -56,7 +56,7 @@ public class Hospital {
 					  	int hid = rs.getInt("hid");
 						String hospitalname = rs.getString("hospitalname");
 						String hospitaladdress = rs.getString("hospitaladdress");
-						String contactnumber = Integer.toString(rs.getInt("contactnumber"));
+						String contactnumber = rs.getString("contactnumber");
 						String email = rs.getString("email");
 					  // Add into the html table    
 
